@@ -12,7 +12,7 @@ import {
 export default function ModelGroup(props: any) {
     
     const { openLogin, openCreateAccount, login } = useAppSelector(
-        (state: RootState) => state.modals
+        (state: RootState) => state.modal
     );
 
     const dispatch = useAppDispatch();

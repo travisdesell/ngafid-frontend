@@ -1,9 +1,12 @@
 import { combineReducers } from 'redux'
 import modalReducer from './modalSlice';
+import loginReducer from './loginSlice';
 
 const reducer = combineReducers({
   // here we will be adding reducers
-  modals:modalReducer
+  modal:modalReducer,
+  login:loginReducer
+
 })
 
 export default reducer;

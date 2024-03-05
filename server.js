@@ -27,18 +27,6 @@ nextApp.prepare().then(() => {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
             }).then((response) => {
-
-                // const { status, data } = response;
-
-                // if (status == 200) {
-                //     const { loggedIn } = data;
-                    
-
-                //     if (loggedIn) {
-                //         res.redirect('/welcome');
-                //     }
-                // }
-                
                 res.json(response.data);
             })
 
@@ -92,9 +80,23 @@ nextApp.prepare().then(() => {
     server.get('/api/getfleetid', async (req, res) => {
         try {
             // Make a GET request to another server on port 8181
-            let { email, password } = req.body;
-            console.log(email, password);
             const response = await axios.get('http://localhost:8181/v2/getfleetid', null, {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            }).then((response) => {
+                res.json(response.data);
+            })
+
+        } catch (error) {
+            console.error('Error making request to port 8181:', error.message);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    });
+    server.get('/api/getUser', async (req, res) => {
+        try {
+            // Make a GET request to another server on port 8181
+            const response = await axios.get('http://localhost:8181/v2/getUser', null, {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
