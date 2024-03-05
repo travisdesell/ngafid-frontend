@@ -114,6 +114,7 @@ nextApp.prepare().then(() => {
     });
 
     const PORT = process.env.PORT || 3000;
+    server.use(express.static('public'));
 
     server.listen(PORT, (err) => {
         if (err) throw err;

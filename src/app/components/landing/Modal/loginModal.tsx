@@ -17,7 +17,6 @@ const style = {
 
 export default function LoginModal(props: any) {
 
-    
     const { onSubmit, handleModalSwitch, onClose, open } = props;
     
     // console.log(open);
