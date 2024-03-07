@@ -21,7 +21,7 @@ nextApp.prepare().then(() => {
             // Make a GET request to another server on port 8181
             let { email, password } = req.body;
             console.log(email, password);
-            const response = await axios.post('https://ngafid.ord/login', null, {
+            const response = await axios.post('http://localhost:8181/login', null, {
                 params: { "email": email, "password": password },
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
